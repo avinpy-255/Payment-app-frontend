@@ -6,7 +6,9 @@ import { InputBox } from "../components/InputBox"
 import { SubHeading } from "../components/SubHeading"
 import { useNavigate } from "react-router-dom"
 import axios from "axios";
-require('dotenv').config()
+
+
+
 
 
 export const Signup = () => {
@@ -36,7 +38,7 @@ export const Signup = () => {
                 }} placeholder="12345678" label={"Password"}/>
                 <div className="pt-4">
                  <Button onClick={async () => {
-              const response = await axios.post(`${API_URI}/user/signup`, {
+              const response = await axios.post(`${process.env.API_URI}/user/signup`, {
               username,
               firstName,
               lastName,

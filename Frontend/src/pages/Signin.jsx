@@ -6,7 +6,9 @@ import { SubHeading } from "../components/SubHeading"
 import { useNavigate } from 'react-router-dom'; 
 import { useState } from 'react'; // Import useState for managing form data
 import axios from 'axios'
-require('dotenv').config()
+
+
+
 
 
 export const Signin = () => {
@@ -19,7 +21,7 @@ export const Signin = () => {
     
         try {
           const response = await axios.post(
-            `${API_URI}/user/signin`,
+            `${process.env.API_URI}/user/signin`,
             { userName, password },
             
           );

@@ -4,7 +4,7 @@ import axios from "axios";
 import {useNavigate} from "react-router-dom"
 
 
-require('dotenv').config()
+
 
 
 export const Users = () => {
@@ -12,7 +12,7 @@ export const Users = () => {
     const [filter, setFilter] = useState("");
 
     useEffect (()=> {
-        axios.get(`${API_URI}/user/bulk?filter=` + filter)
+        axios.get(`${process.env.API_URI}/user/bulk?filter=` + filter)
         .then (response => {
             setaUsers(response.data.user)
         })

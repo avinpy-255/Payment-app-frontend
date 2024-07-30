@@ -3,7 +3,7 @@ import axios from "axios";
 import { useState } from 'react';
 
 
-require('dotenv').config()
+
 
 
 export const SendMoney = () => {
@@ -43,7 +43,7 @@ export const SendMoney = () => {
                     />
                     </div>
                     <button onClick={() => {
-                        axios.post( `${API_URI}/account/transfer`, {
+                        axios.post( `${process.env.API_URI}/account/transfer`, {
                             to: id,
                             amount
                         }, {

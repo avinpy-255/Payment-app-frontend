@@ -4,7 +4,7 @@ import { Balance } from "../components/Balance";
 import { Users } from "../components/Users";
 import axios from "axios";
 
-require('dotenv').config()
+
 
 export const Dashboard = () => {
   //TODO: showing user icon
@@ -12,7 +12,7 @@ export const Dashboard = () => {
   const [user, setUser] = useState("");
 
   useEffect(() => {
-    axios.get( `${API_URI}/account/balance`, {
+    axios.get( `${process.env.API_URI}/account/balance`, {
       headers: { 
         Authorization: "Bearer " + localStorage.getItem("token")
       }
