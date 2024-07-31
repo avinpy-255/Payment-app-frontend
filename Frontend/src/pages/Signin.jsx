@@ -14,14 +14,16 @@ import axios from 'axios'
 export const Signin = () => {
     const [userName, setUserName] = useState(" ")
     const [password, setPassword] = useState(" ")
-    const navigate = useNavigate(); 
+    const navigate = useNavigate();
+    
+    console.log(import.meta.env.VITE_API_URI);
 
     const handleSignIn = async (e) => {
         e.preventDefault();
     
         try {
           const response = await axios.post(
-            `${process.env.API_URI}/user/signin`,
+            `${import.meta.env.VITE_API_URI}/user/signin`,
             { userName, password },
             
           );

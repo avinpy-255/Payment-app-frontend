@@ -11,8 +11,10 @@ export const Users = () => {
     const [users, setaUsers] = useState([]);
     const [filter, setFilter] = useState("");
 
+    console.log(import.meta.env.VITE_API_URI);
+
     useEffect (()=> {
-        axios.get(`${process.env.API_URI}/user/bulk?filter=` + filter)
+        axios.get(`${import.meta.env.VITE_API_URI}/user/bulk?filter=` + filter)
         .then (response => {
             setaUsers(response.data.user)
         })

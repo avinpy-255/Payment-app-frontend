@@ -6,6 +6,7 @@ import { InputBox } from "../components/InputBox"
 import { SubHeading } from "../components/SubHeading"
 import { useNavigate } from "react-router-dom"
 import axios from "axios";
+import dotenv from "dotenv"
 
 
 
@@ -17,6 +18,8 @@ export const Signup = () => {
     const [username, setUserName] = useState(" ")
     const [password, setPassword] = useState(" ")
     const navigate = useNavigate()
+
+    console.log(import.meta.env.VITE_API_URI);
 
 
     return <div className="bg-violet-500 h-screen flex justify-center">
@@ -38,7 +41,7 @@ export const Signup = () => {
                 }} placeholder="12345678" label={"Password"}/>
                 <div className="pt-4">
                  <Button onClick={async () => {
-              const response = await axios.post(`${process.env.API_URI}/user/signup`, {
+              const response = await axios.post(`${import.meta.env.VITE_API_URI}/user/signup`, {
               username,
               firstName,
               lastName,

@@ -12,6 +12,8 @@ export const SendMoney = () => {
     const name = searchParams.get("name");
     const [amount, setAmount] = useState(0);
 
+    console.log(import.meta.env.VITE_API_URI);
+
     return <div class="flex justify-center h-screen bg-violet-500 ">
         <div className="h-full flex flex-col justify-center">
             <div
@@ -43,7 +45,7 @@ export const SendMoney = () => {
                     />
                     </div>
                     <button onClick={() => {
-                        axios.post( `${process.env.API_URI}/account/transfer`, {
+                        axios.post( `${import.meta.env.VITE_API_URI}/account/transfer`, {
                             to: id,
                             amount
                         }, {

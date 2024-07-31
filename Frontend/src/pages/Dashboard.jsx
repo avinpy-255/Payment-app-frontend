@@ -7,12 +7,15 @@ import axios from "axios";
 
 
 export const Dashboard = () => {
+
+  console.log(import.meta.env.VITE_API_URI);
+
   //TODO: showing user icon
   const [money, setMoney] = useState("");
   const [user, setUser] = useState("");
 
   useEffect(() => {
-    axios.get( `${process.env.API_URI}/account/balance`, {
+    axios.get( `${import.meta.env.VITE_API_URI}/account/balance`, {
       headers: { 
         Authorization: "Bearer " + localStorage.getItem("token")
       }
