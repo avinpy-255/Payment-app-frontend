@@ -22,7 +22,7 @@ export const Signup = () => {
 
     axios.defaults.withCredentials = true;
 
-    //console.log(import.meta.env.VITE_API_URI);
+    console.log(import.meta.env.VITE_API_URI);
 
     const handleSignup = async () => {
         try {
