@@ -7,9 +7,11 @@ import {Signup} from "./pages/Signup";
 import {Signin} from "./pages/Signin";
 import {Dashboard} from "./pages/Dashboard";
 import {SendMoney} from "./pages/SendMoney";
+import axios from "axios";
 //a[sokdpaskdak[d]]
 
 function App() {
+  axios.defaults.withCredentials = true;
   return (
     <>
        <BrowserRouter>

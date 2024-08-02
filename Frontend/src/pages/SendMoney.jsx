@@ -11,7 +11,7 @@ export const SendMoney = () => {
     const id = searchParams.get("id");
     const name = searchParams.get("name");
     const [amount, setAmount] = useState(0);
-
+    axios.defaults.withCredentials = true;
     console.log(import.meta.env.VITE_API_URI);
 
     return <div class="flex justify-center h-screen bg-violet-500 ">

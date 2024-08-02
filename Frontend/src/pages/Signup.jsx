@@ -6,7 +6,8 @@ import { InputBox } from "../components/InputBox"
 import { SubHeading } from "../components/SubHeading"
 import { useNavigate } from "react-router-dom"
 import axios from "axios";
-import dotenv from "dotenv"
+
+
 
 
 
@@ -18,6 +19,8 @@ export const Signup = () => {
     const [username, setUserName] = useState(" ")
     const [password, setPassword] = useState(" ")
     const navigate = useNavigate()
+
+    axios.defaults.withCredentials = true;
 
     console.log(import.meta.env.VITE_API_URI);
 

@@ -15,7 +15,7 @@ export const Signin = () => {
     const [userName, setUserName] = useState(" ")
     const [password, setPassword] = useState(" ")
     const navigate = useNavigate();
-    
+    axios.defaults.withCredentials = true;
     console.log(import.meta.env.VITE_API_URI);
 
     const handleSignIn = async (e) => {

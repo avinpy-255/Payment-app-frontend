@@ -9,7 +9,7 @@ import axios from "axios";
 export const Dashboard = () => {
 
   console.log(import.meta.env.VITE_API_URI);
-
+  axios.defaults.withCredentials = true;
   //TODO: showing user icon
   const [money, setMoney] = useState("");
   const [user, setUser] = useState("");

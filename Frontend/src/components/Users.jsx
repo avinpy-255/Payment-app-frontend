@@ -10,7 +10,7 @@ import {useNavigate} from "react-router-dom"
 export const Users = () => {
     const [users, setaUsers] = useState([]);
     const [filter, setFilter] = useState("");
-
+    axios.defaults.withCredentials = true;
     console.log(import.meta.env.VITE_API_URI);
 
     useEffect (()=> {
