@@ -31,11 +31,8 @@ export const Signup = () => {
                 firstName,
                 lastName,
                 password
-            }, {
-                headers: {
-                    'Content-Type': 'application/json'
-                }
-            });
+            },
+            );
             localStorage.setItem("token", response.data.token);
             navigate("/");
         } catch (error) {
