@@ -22,7 +22,27 @@ export const Signup = () => {
 
     axios.defaults.withCredentials = true;
 
-    console.log(import.meta.env.VITE_API_URI);
+    //console.log(import.meta.env.VITE_API_URI);
+
+    const handleSignup = async () => {
+        try {
+            const response = await axios.post(`${import.meta.env.VITE_API_URI}/user/signup`, {
+                username,
+                firstName,
+                lastName,
+                password
+            }, {
+                headers: {
+                    'Content-Type': 'application/json'
+                }
+            });
+            localStorage.setItem("token", response.data.token);
+            navigate("/");
+        } catch (error) {
+            console.error("Error during signup:", error);
+        }
+    };
+
 
 
     return <div className="bg-violet-500 h-screen flex justify-center">
@@ -43,15 +63,7 @@ export const Signup = () => {
                     setPassword(e.target.value);
                 }} placeholder="12345678" label={"Password"}/>
                 <div className="pt-4">
-                 <Button onClick={async () => {
-              const response = await axios.post(`${import.meta.env.VITE_API_URI}/user/signup`, {
-              username,
-              firstName,
-              lastName,
-              password
-            });
-            localStorage.setItem("token", response.data.token)
-            navigate("/")}} label={"Sign up"}/>
+                 <Button onClick={handleSignup} label={"Sign up"}/>
                 </div>
                 <BottomWarning label={"Already have an account?"} buttonText={"Sign in"} to={"/signin"} />
             </div>
